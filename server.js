@@ -17,10 +17,29 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
   console.log('Mongoose is connected');
 });
+
+
+// Modules
+const getProjects = require("./modules/getProject");
+const postProject = require("./modules/postProject");
+// const deleteProject = require("./modules/deleteProject");
+const putProject = require("./modules/putProject");
+
 // ROUTES
 app.get("/", (request, response) => {
   response.send("Welcome to the Portfolio server!");
 });
+
+// Mongo Endpoints
+app.get ('/project', getProjects);
+app.post ('/project', postProject);
+// app.delete ('/project', deleteProject);
+app.put ('/project', putProject);
+
+
+
+
+
 // Errors
 app.get("*", (request, response) => {
   response.send("This page does not exist");
