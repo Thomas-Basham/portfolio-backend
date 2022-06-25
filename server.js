@@ -22,8 +22,13 @@ db.once('open', function () {
 // Modules
 const getProjects = require("./modules/getProject");
 const postProject = require("./modules/postProject");
-// const deleteProject = require("./modules/deleteProject");
 const putProject = require("./modules/putProject");
+// const deleteProject = require("./modules/deleteProject");
+
+const getComments = require("./modules/getComment");
+const postComment = require("./modules/postComment");
+const putComment = require("./modules/putComment");
+// const deleteComment = require("./modules/deleteComment");
 
 // ROUTES
 app.get("/", (request, response) => {
@@ -33,9 +38,13 @@ app.get("/", (request, response) => {
 // Mongo Endpoints
 app.get ('/project', getProjects);
 app.post ('/project', postProject);
+app.put ('/project/:id', putProject);
 // app.delete ('/project', deleteProject);
-app.put ('/project', putProject);
 
+app.get ('/Comment', getComments);
+app.post ('/Comment', postComment);
+app.put ('/Comment/:id', putComment);
+// app.delete ('/project', deleteComment);
 
 
 
