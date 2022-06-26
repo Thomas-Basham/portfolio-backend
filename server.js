@@ -28,6 +28,7 @@ const putProject = require("./modules/putProject");
 const getComments = require("./modules/getComment");
 const postComment = require("./modules/postComment");
 const putComment = require("./modules/putComment");
+const putLikedBy = require("./modules/putLike");
 // const deleteComment = require("./modules/deleteComment");
 
 // ROUTES
@@ -38,7 +39,7 @@ app.get("/", (request, response) => {
 // Mongo Endpoints
 app.get ('/project', getProjects);
 app.post ('/project', postProject);
-app.put ('/project/:id', putProject);
+app.put ('/project/:id', putLikedBy);
 // app.delete ('/project', deleteProject);
 
 app.get ('/Comment', getComments);

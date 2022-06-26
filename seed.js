@@ -14,7 +14,7 @@ async function seed() {
       {
         user: "",
         text: "",
-        updated: "String",
+        updated: "",
       },
     ],
   });
