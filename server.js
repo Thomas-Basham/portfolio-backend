@@ -8,6 +8,7 @@ const app = express();
 app.use(express.json());
 const cors = require("cors");
 app.use(cors());
+
 const axios = require("axios");
 
 const mongoose = require('mongoose');
@@ -29,7 +30,7 @@ const getComments = require("./modules/getComment");
 const postComment = require("./modules/postComment");
 const putComment = require("./modules/putComment");
 const putLikedBy = require("./modules/putLike");
-// const deleteComment = require("./modules/deleteComment");
+const deleteComment = require("./modules/deleteComment");
 
 // ROUTES
 app.get("/", (request, response) => {
@@ -45,7 +46,7 @@ app.put ('/project/:id', putLikedBy);
 app.get ('/Comment', getComments);
 app.post ('/Comment', postComment);
 app.put ('/Comment/:id', putComment);
-// app.delete ('/project', deleteComment);
+app.delete ('/Comment/:id', deleteComment);
 
 
 
