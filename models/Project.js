@@ -5,7 +5,7 @@ const { Schema } = mongoose;
 
 const projectSchema = new Schema({
   project: { type: String },
-  likes: { type: Number, default: null },
+  likes: { type: Number, default: 0 },
   likedBy: { type: Array, default: null },
   comments: {type: Array, default: null}
 });

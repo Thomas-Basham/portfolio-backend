@@ -40,7 +40,8 @@ app.get("/", (request, response) => {
 // Mongo Endpoints
 app.get ('/project', getProjects);
 app.post ('/project', postProject);
-app.put ('/project/:id', putLikedBy);
+app.put ('/like/:id', putLikedBy);
+app.put ('/project/:id', putProject);
 // app.delete ('/project', deleteProject);
 
 app.get ('/Comment', getComments);

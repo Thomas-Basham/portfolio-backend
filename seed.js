@@ -7,7 +7,7 @@ mongoose.connect(process.env.DB_URL);
 
 async function seed() {
   await Project.create({
-    project: "6",
+    project: "7",
     likes: 0,
     likedBy: [],
     comments: [
